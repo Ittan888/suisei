@@ -6,10 +6,12 @@ import Vuetify from 'vuetify'
 import colors from 'vuetify/es5/util/colors'
 import {showAt, hideAt} from 'vue-breakpoints'
 
+import 'reset-css/reset.css'
 import 'vuetify/dist/vuetify.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import '~/assets/app.styl'
 import '~/assets/variables.styl'
+import '~/assets/common.css'
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component

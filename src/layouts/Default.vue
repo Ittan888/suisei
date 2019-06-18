@@ -1,16 +1,48 @@
 <template>
   <v-app dark class="default">
-    
-    <v-toolbar color="accent" dark fixed app>
-      <!-- <v-toolbar-title>キャスト予約</v-toolbar-title> -->
-      <v-layout align-center>
-        <h1 class="logo ml-5"><img src="/siteid.png" alt=""></h1>
-      </v-layout>
-      <v-spacer></v-spacer>
-      <show-at :breakpoints="breakpoints" breakpoint="small">
-        <v-toolbar-side-icon @click.stop="drawer.isOpen = !drawer.isOpen"></v-toolbar-side-icon>
-      </show-at>
-    </v-toolbar>
+
+
+    <hide-at :breakpoints="breakpoints" breakpoint="small">
+      <v-toolbar color="accent" dark fixed app>
+          <v-spacer></v-spacer>
+          <v-layout align-center>
+            <h1 class="logo"><img src="/siteid.png" alt=""></h1>
+          </v-layout>
+          <v-spacer></v-spacer>
+          <ul class="desktop_header_nav">
+            <li>
+              <nuxt-link to="/">
+                <img src="/ttl02_05.png" alt="">
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/">
+                <img src="/ttl02_03.png" alt="">
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/">
+                <img src="/ttl02_02.png" alt="">
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/">
+                <img src="/ttl02_06.png" alt="">
+              </nuxt-link>
+            </li>
+          </ul>
+          <v-spacer></v-spacer>
+      </v-toolbar>
+    </hide-at>
+
+    <show-at :breakpoints="breakpoints" breakpoint="small">
+      <v-toolbar class="header_nav" color="accent" dark fixed app>
+        <v-layout justify-center>
+          <h1 class="logo"><img src="/siteid.png" alt=""></h1>
+        </v-layout>
+        <v-toolbar-side-icon class="drawer_btn" @click.stop="drawer.isOpen = !drawer.isOpen"></v-toolbar-side-icon>
+      </v-toolbar>
+    </show-at>
     
     <v-content>
       <v-container fluid fill-height>
@@ -80,4 +112,15 @@ export default {
     height 52px
     img
       width 100%
+  .desktop_header_nav
+    display flex
+    li
+      margin-left 2rem
+  .header_nav
+    position relative
+    .drawer_btn
+      position absolute
+      top 3px
+      right 14px
+
 </style>
