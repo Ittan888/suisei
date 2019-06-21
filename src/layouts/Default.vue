@@ -44,7 +44,7 @@
       </v-toolbar>
     </show-at>
     
-    <v-content>
+    <v-content style="padding: 0;">
       <slot />
     </v-content>
   </v-app>
