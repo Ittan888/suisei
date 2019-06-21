@@ -5,12 +5,14 @@ import DefaultLayout from '~/layouts/Default.vue'
 import Vuetify from 'vuetify'
 import colors from 'vuetify/es5/util/colors'
 import {showAt, hideAt} from 'vue-breakpoints'
+import { VueperSlides, VueperSlide } from 'vueperslides'
 
 import 'reset-css/reset.css'
 import 'vuetify/dist/vuetify.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import '~/assets/app.styl'
 import '~/assets/variables.styl'
+import 'vueperslides/dist/vueperslides.css'
 import '~/assets/common.css'
 
 export default function (Vue, { router, head, isClient }) {
@@ -37,5 +39,7 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('Layout', DefaultLayout)
   Vue.component('show-at', showAt)
   Vue.component('hide-at', hideAt)
+  Vue.component('vueper-slides', VueperSlides)
+  Vue.component('vueper-slide', VueperSlide)
 
 }

@@ -78,3 +78,17 @@ ul, ol{
   -webkit-margin-end: 0;
   -webkit-padding-start: 0;
 }
+
+.site_container{
+  
+}
+
+@media screen and (min-width: 769px) {
+  .site_container{
+    width: 
+  }
+}
+
+@media screen and (max-width: 768px) {
+    
+}

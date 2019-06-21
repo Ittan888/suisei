@@ -4,7 +4,7 @@
 
     <hide-at :breakpoints="breakpoints" breakpoint="small">
       <v-toolbar color="accent" dark fixed app>
-          <v-spacer></v-spacer>
+        <v-container class="margin_center" fill-height>
           <v-layout align-center>
             <h1 class="logo"><img src="/siteid.png" alt=""></h1>
           </v-layout>
@@ -31,7 +31,7 @@
               </nuxt-link>
             </li>
           </ul>
-          <v-spacer></v-spacer>
+        </v-container>
       </v-toolbar>
     </hide-at>
 
@@ -45,13 +45,7 @@
     </show-at>
     
     <v-content>
-      <v-container fluid fill-height>
-        <v-layout>
-          <v-flex>
-            <slot />
-          </v-flex>
-        </v-layout>
-      </v-container>
+      <slot />
     </v-content>
   </v-app>
 </template>
@@ -115,12 +109,14 @@ export default {
   .desktop_header_nav
     display flex
     li
-      margin-left 2rem
+      margin-left 4rem
   .header_nav
     position relative
     .drawer_btn
       position absolute
       top 3px
       right 14px
-
+  .margin_center
+    margin-right auto !important
+    margin-left auto !important
 </style>
