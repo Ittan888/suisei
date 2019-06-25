@@ -50,22 +50,22 @@
         <ul>
           <li>
             <g-link to="/">
-              <img src="/ttl02_01.png" width alt="">
+              <img src="/ttl02_01.png" alt="">
             </g-link>
           </li>
           <li>
             <g-link to="/biography">
-              <img src="/ttl02_03.png" width alt="">
+              <img src="/ttl02_03.png" alt="">
             </g-link>
           </li>
           <li>
             <g-link to="/youtube">
-              <img src="/ttl02_04.png" width alt="">
+              <img src="/ttl02_04.png" alt="">
             </g-link>
           </li>
           <li>
             <g-link to="/">
-              <img src="/ttl02_05.png" width alt="">
+              <img src="/ttl02_05.png" alt="">
             </g-link>
           </li>
         </ul>
@@ -196,9 +196,17 @@ export default {
     height 100vh
     background rgba(0,0,0,.9)
     ul
-      width 60%
+      display flex
+      flex-direction column
+      justify-content center
+
       li
         text-align center
         margin-bottom 3rem
+        display table
+        a
+          display block
+        img
+          width auto
 
 </style>
