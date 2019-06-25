@@ -16,7 +16,7 @@
               </g-link>
             </li>
             <li>
-              <g-link to="/">
+              <g-link to="/biography">
                 <img src="/ttl02_03.png" alt="">
               </g-link>
             </li>
@@ -42,6 +42,34 @@
         </v-layout>
         <v-toolbar-side-icon class="drawer_btn" @click.stop="drawer.isOpen = !drawer.isOpen"></v-toolbar-side-icon>
       </v-toolbar>
+    </show-at>
+
+    <show-at :breakpoints="breakpoints" breakpoint="small">
+      <div class="mobile_header_nav">
+        <v-icon>close</v-icon>
+        <ul>
+          <li>
+            <g-link to="/">
+              <img src="/ttl02_01.png" width alt="">
+            </g-link>
+          </li>
+          <li>
+            <g-link to="/biography">
+              <img src="/ttl02_03.png" width alt="">
+            </g-link>
+          </li>
+          <li>
+            <g-link to="/youtube">
+              <img src="/ttl02_04.png" width alt="">
+            </g-link>
+          </li>
+          <li>
+            <g-link to="/">
+              <img src="/ttl02_05.png" width alt="">
+            </g-link>
+          </li>
+        </ul>
+      </div>
     </show-at>
 
     <vueper-slides
@@ -161,4 +189,16 @@ export default {
   .margin_center
     margin-right auto !important
     margin-left auto !important
+  .mobile_header_nav
+    position fixed
+    z-index 9999
+    width 100vw
+    height 100vh
+    background rgba(0,0,0,.9)
+    ul
+      width 60%
+      li
+        text-align center
+        margin-bottom 3rem
+
 </style>
