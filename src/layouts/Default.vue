@@ -6,28 +6,28 @@
       <v-toolbar color="accent" dark fixed app>
         <v-container class="margin_center" fill-height>
           <v-layout align-center>
-            <h1 class="logo"><img src="/siteid.png" alt=""></h1>
+            <h1 class="logo"><span>彗星</span>ミトコンドリア</h1>
           </v-layout>
           <v-spacer></v-spacer>
           <ul class="desktop_header_nav">
             <li>
               <g-link to="/">
-                <img src="/ttl02_01.png" alt="">
+                Top
               </g-link>
             </li>
             <li>
               <g-link to="/biography">
-                <img src="/ttl02_03.png" alt="">
+                Biography
               </g-link>
             </li>
             <li>
               <g-link to="/youtube">
-                <img src="/ttl02_04.png" alt="">
+                Youtube
               </g-link>
             </li>
             <li>
               <g-link to="/">
-                <img src="/ttl02_05.png" alt="">
+                Blog
               </g-link>
             </li>
           </ul>
@@ -38,7 +38,7 @@
     <show-at :breakpoints="breakpoints" breakpoint="small">
       <v-toolbar class="header_nav" color="accent" dark fixed app>
         <v-layout justify-center>
-          <h1 class="logo"><img src="/siteid.png" alt=""></h1>
+          <h1 class="logo"><span>彗星</span>ミトコンドリア</h1>
         </v-layout>
         <v-toolbar-side-icon class="drawer_btn" @click.stop="drawer.isOpen = !drawer.isOpen"></v-toolbar-side-icon>
       </v-toolbar>
@@ -75,6 +75,7 @@
     </show-at>
 
     <vueper-slides
+      class="mt-5"
       fade
       slide-content-outside="top"
       slide-content-outside-class="max-widthed"
@@ -187,12 +188,23 @@ export default {
   font-family: "pigmo";
   src: url("/fonts/Pigmo-01.otf") format("opentype");
 }
+@font-face {
+  font-family: "kaiso";
+  src: url("/fonts/Kaiso-Next-B.otf") format("opentype");
+}
 .default
   background #212121 !important
   // .inner_container
   .logo
-    width 75px
-    height 52px
+    font-family 'kaiso'
+    text-align center
+    font-size 1.1rem
+    line-height 1.2
+    span
+      font-size 2.5rem
+      font-family 'pigmo'
+      display block
+
     img
       width 100%
   .ttl02
@@ -207,11 +219,17 @@ export default {
       
   .desktop_header_nav
     display flex
+    justify-content flex-end
     width 60rem
     @media screen and (max-width: 1000px)
       width 40rem
     li
       margin-left 4.5rem
+      a
+        font-size 2.5rem
+        font-family 'pigmo'
+        text-decoration none
+        color rgb(255,255,255)
   .header_nav
     // position relative
     .drawer_btn
