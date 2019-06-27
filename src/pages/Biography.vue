@@ -1,7 +1,8 @@
 <template lang="html">
 
   <Layout class="biography">
-    <h2 class="ttl02 mt-4 mb-3"><img src="/ttl02_03.png" alt=""></h2>
+    <!-- <h2 class="ttl02 mt-5 mb-4"><img src="/ttl02_03.png" alt=""></h2> -->
+    <h2 class="ttl02 mt-5 mb-4">Biography</h2>
 
     <v-layout row wrap>
       <v-flex xs6 sm6 md4 lg3 xl2 v-for="(member, memberIndex) in members" :key="memberIndex">

@@ -1,7 +1,7 @@
 <template lang="html">
 
   <Layout class="youtube">
-    <h2 class="ttl02 mt-4 mb-3"><img src="/ttl02_04.png" alt=""></h2>
+    <h2 class="ttl02 mt-5 mb-4"><img src="/ttl02_04.png" alt=""></h2>
     <v-layout wrap>
       <v-flex xs12 sm6 md6 lg4 v-for="(movie, movieIndex) in movies" :key="movieIndex">
         <v-card class="card" color="#fff">

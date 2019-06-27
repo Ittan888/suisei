@@ -157,6 +157,10 @@ export default {
 </script>
 
 <style lang="stylus">
+@font-face {
+  font-family: "pigmo";
+  src: url("/fonts/Pigmo-01.otf") format("opentype");
+}
 .default
   background #212121 !important
   // .inner_container
@@ -166,6 +170,8 @@ export default {
     img
       width 100%
   .ttl02
+    font-family 'pigmo'
+    font-size 4rem
     text-align center
     img
       width 20rem
