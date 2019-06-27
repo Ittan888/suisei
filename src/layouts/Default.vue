@@ -45,31 +45,33 @@
     </show-at>
 
     <show-at :breakpoints="breakpoints" breakpoint="small">
-      <div class="mobile_header_nav">
-        <v-icon>close</v-icon>
-        <ul>
-          <li>
-            <g-link to="/">
-              <img src="/ttl02_01.png" alt="">
-            </g-link>
-          </li>
-          <li>
-            <g-link to="/biography">
-              <img src="/ttl02_03.png" alt="">
-            </g-link>
-          </li>
-          <li>
-            <g-link to="/youtube">
-              <img src="/ttl02_04.png" alt="">
-            </g-link>
-          </li>
-          <li>
-            <g-link to="/">
-              <img src="/ttl02_05.png" alt="">
-            </g-link>
-          </li>
-        </ul>
-      </div>
+      <transition name="fade">
+        <div v-if="drawer.isOpen" class="mobile_header_nav">
+          <v-btn small fab flat color="white" @click="drawer.isOpen = false"><v-icon>close</v-icon></v-btn>
+          <ul>
+            <li>
+              <g-link to="/">
+                Top
+              </g-link>
+            </li>
+            <li>
+              <g-link to="/biography">
+                Biography
+              </g-link>
+            </li>
+            <li>
+              <g-link to="/youtube">
+                Youtube
+              </g-link>
+            </li>
+            <li>
+              <g-link to="/">
+                Blog
+              </g-link>
+            </li>
+          </ul>
+        </div>
+      </transition>
     </show-at>
 
     <vueper-slides
@@ -98,6 +100,17 @@
         <slot />
       </v-container>
     </v-content>
+
+    <v-card>
+      <footer>
+        <v-container>
+          <v-layout align-center justify-center>
+            <p>Copyright (c)SuiseiMitokondoria CO.,LTD All rights reserved.</p>
+          </v-layout>
+        </v-container>
+      </footer>
+    </v-card>
+    
   </v-app>
 </template>
 
@@ -111,6 +124,9 @@ query {
 
 <script>
 export default {
+  mounted(){
+
+  },
   data() {
     return {
       slides:[
@@ -128,7 +144,7 @@ export default {
       clipped: false,
       fixed: false,
       drawer: {
-        isOpen: true,
+        isOpen: false,
         items: [
           {
             icon: "create",
@@ -152,6 +168,16 @@ export default {
   },
   methods: {
     
+  },
+  computed: {
+    location(){
+      return this.$route.path 
+    }
+  },
+  watch: {
+    location(value){
+      this.drawer.isOpen = false
+    }
   }
 };
 </script>
@@ -187,7 +213,7 @@ export default {
     li
       margin-left 4.5rem
   .header_nav
-    position relative
+    // position relative
     .drawer_btn
       position absolute
       top 3px
@@ -212,7 +238,20 @@ export default {
         display table
         a
           display block
-        img
-          width auto
-
+          font-family 'pigmo'
+          text-decoration none
+          color rgb(255,255,255)
+          font-size 2.5rem
+  footer
+    background rgb(0,0,0)
+    position fixed
+    bottom 0
+    width 100%
+    p
+      text-align center
+      font-size 1rem
+  .fade-enter-active, .fade-leave-active
+    transition: opacity .5s
+  .fade-enter, .fade-leave-to
+    opacity: 0
 </style>
