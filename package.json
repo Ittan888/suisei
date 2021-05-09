@@ -10,7 +10,7 @@
     "@fortawesome/fontawesome-free": "^5.9.0",
     "element-ui": "^2.9.1",
     "gridsome": "^0.6.0",
-    "lodash": "4.17.13",
+    "lodash": "4.17.21",
     "reset-css": "^4.0.1",
     "vue-breakpoints": "^1.1.0",
     "vueperslides": "^1.19.0",
